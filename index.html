@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Ledger — Week 4 Project</title>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Task Ledger</h1>
+    <p class="tagline">Plan the day, check it off, keep the record.</p>
+  </header>
+
+  <main class="ledger">
+
+    <section class="entry-panel" aria-label="Add a new task">
+      <form id="task-form" novalidate>
+        <div class="field">
+          <label for="task-title">Task</label>
+          <input type="text" id="task-title" placeholder="e.g. Finish DOM manipulation exercises" autocomplete="off">
+        </div>
+
+        <div class="field field-narrow">
+          <label for="task-priority">Priority</label>
+          <select id="task-priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+
+        <button type="submit" id="add-btn">Add task</button>
+      </form>
+      <p id="form-error" class="form-error" role="alert"></p>
+    </section>
+
+    <section class="controls" aria-label="Filter tasks">
+      <div class="filter-group" id="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+      <p class="count" id="task-count">0 tasks</p>
+    </section>
+
+    <ul id="task-list" class="task-list" aria-label="Task list"></ul>
+
+    <p id="empty-state" class="empty-state">Nothing here yet. Add your first task above.</p>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Week 4 — AUREX Full-Stack Engineering Internship</p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
